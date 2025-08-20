@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Music App</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #f5ecea;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .music-card {
+            background: linear-gradient(to bottom, #e6f7ff, #ffffff);
+            border-radius: 20px;
+            padding: 20px;
+            width: 260px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+
+        .music-card h3 {
+            text-align: left;
+            font-size: 14px;
+            margin-bottom: 10px;
+        }
+
+        .album-cover {
+            width: 100%;
+            height: auto;
+            border-radius: 10px;
+            margin-bottom: 10px;
+        }
+
+        .title {
+            font-size: 18px;
+            font-weight: bold;
+        }
+
+        .artist {
+            font-size: 12px;
+            color: gray;
+            margin-bottom: 10px;
+        }
+
+        select {
+            width: 100%;
+            padding: 8px;
+            border-radius: 8px;
+            border: 1px solid #ccc;
+            margin-bottom: 15px;
+            font-size: 12px;
+        }
+
+        .waveform {
+            display: flex;
+            justify-content: center;
+            align-items: flex-end;
+            height: 50px;
+            margin-bottom: 5px;
+        }
+
+        .waveform div {
+            width: 4px;
+            background: linear-gradient(to top, #00c6ff, #0072ff);
+            margin: 0 1px;
+            border-radius: 2px;
+            animation: bounce 1s infinite ease-in-out;
+        }
+
+        .waveform div:nth-child(odd) {
+            height: 30px;
+            animation-delay: 0.2s;
+        }
+
+        .waveform div:nth-child(even) {
+            height: 50px;
+        }
+
+        @keyframes bounce {
+
+            0%,
+            100% {
+                transform: scaleY(1);
+            }
+
+            50% {
+                transform: scaleY(0.5);
+            }
+        }
+
+        .time {
+            display: flex;
+            justify-content: space-between;
+            font-size: 10px;
+            color: gray;
+            margin-bottom: 10px;
+        }
+
+        .controls {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        .btn {
+            background: #e6f7ff;
+            padding: 10px;
+            border-radius: 50%;
+            border: none;
+            cursor: pointer;
+            font-size: 16px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="music-card">
+        <h3>Music App</h3>
+        <img src="https://upload.wikimedia.org/wikipedia/en/1/1b/Adele_-_21.png" alt="Album Cover" class="album-cover">
+        <div class="title">Janze</div>
+
+
+        <select>
+            <option value="0">Shape of you</option>
+            <option value="1">Ты и Я</option>
+            <option value="2">Hope</option>
+       
+        </select>
+
+        <div class="waveform">
+            <input class="range" type="range" style="width: 280px;">
+        </div>
+
+        <div class="time">
+            <span>1:45</span>
+            <span>4:15</span>
+        </div>
+
+        <div class="controls">
+            <button class="btn">⏮️</button>
+            <button class="btn play">⏸️</button>
+            <button class="btn">⏯️</button>
+        </div>
+    </div>
+
+    <script src="./script.js"></script>
+</body>
+
+</html>
